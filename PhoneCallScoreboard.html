@@ -1,0 +1,264 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+         <meta charset="utf-8">
+	 
+         <title>Phone Call Scoreboard</title>
+
+         <style>
+
+                body {
+
+                	background-color: darkblue;
+                	color: #dcdcdc;
+                	font-family: Georgia, 'Times New Roman', Times, serif;
+                	font-size: 24px;
+                	text-align: center;
+                 }
+
+		h2 {
+			margin: auto;
+		}
+
+               	button {
+			background-color: #0048ba;
+                	color: #ebecf0;
+                	padding: 15px 32px;
+                	font-family: Georgia, 'Times New Roman', Times, serif;
+                	font-size: 20px;
+                	text-align: center;
+                	border-radius: 12px;
+			border-color: #005ae9;
+                }
+		.more {
+		  background-color: #0e7a0d;
+                  color: #ebecf0;
+                  padding: 15px 32px;
+                  font-family: Georgia, 'Times New Roman', Times, serif;
+                  font-size: 20px;
+                  text-align: center;
+                  border-radius: 12px;
+				  border-color: #119910;
+                }
+                
+		table {
+		 	margin: auto;
+			width: 60%;
+			height: 75%;
+		}
+
+		td {
+			padding: 15px;
+		}
+
+
+
+
+         </style>
+	 
+</head>
+<body>
+	<h2>Phone Call Scoreboard</h2>
+
+	<hr>
+
+	<table id="">
+	    <tr>
+		 <td><div>
+      			<p>Subaru Service</p>
+			
+			<p id="subsvce-counter" >0</p>
+			<button id = "lesssubsvce">-</button> <button class = "more" id = "subsvce">+</button>
+			
+		</div></td>
+
+		<td><div>
+      			<p>Subaru Sales</p>
+			
+			<p id="subsales-counter">0</p>
+			<button id = "lesssubsales">-</button> <button class = "more" id = "subsales">+</button>
+		</div></td>
+
+		<td><div>
+      			<p>Subaru Parts</p>
+			<p id="subparts-counter">0</p>
+			<button id = "lesssubparts">-</button> <button class = "more" id = "subparts">+</button>
+		</div></td>
+	   </tr>
+		
+	   <tr>
+		 <td><div>
+      			<p>Finance/ Acctg.</p>
+			
+			<p id="subfin-counter" >0</p>
+			<button id = "lesssubfin">-</button> <button class = "more" id = "subfin">+</button>
+			
+		</div></td>
+
+		<td><div>
+      			<p>Internal</p>
+			
+			<p id="internal-counter">0</p>
+			<button id = "lessinternal">-</button> <button class = "more" id = "internal">+</button>
+		</div></td>
+
+		<td><div>
+      			<p>Miscellaneous</p>
+			<p id="misc-counter">0</p>
+			<button id = "lessmisc">-</button> <button class = "more" id = "misc">+</button>
+		</div></td>
+	   </tr>
+		
+	   <tr>
+		 <td><div>
+      			<p>Hyundai</p>
+			
+			<p id="hyundai-counter" >0</p>
+			<button id = "lesshyundai">-</button> <button class = "more" id = "hyundai">+</button>
+			
+		</div></td>
+
+		<td><div>
+      			<p>Non-Call</p>
+			
+			<p id="noncall-counter">0</p>
+			<button id = "lessnoncall">-</button> <button class = "more" id = "noncall">+</button>
+		</div></td>
+
+		<td><div>
+      			<p>Maserati</p>
+			<p id="maserati-counter">0</p>
+			<button id = "lessmaserati">-</button> <button class = "more" id = "maserati">+</button>
+		</div></td>
+	   </tr>
+
+	</table>
+
+<script>
+
+	//Generic Increase function:
+		var inc_counter = function(event){
+    			var id = event.target.id;
+    			var counter = document.getElementById(id + "-counter");
+    			counter.innerHTML++;
+		};
+
+	//Generic Decrease function:
+		var dec_counter = function(event){
+    			var id = event.target.id;
+			var whichC = id.slice(4);
+    			var counter = document.getElementById(whichC + "-counter");
+    			counter.innerHTML--;
+		};
+		
+	//All the information to put into the Generic Increase Function:
+		var subsvce = document.getElementById("subsvce");
+		var counter1 = document.getElementById("subsvce-counter");
+		subsvce.onclick = inc_counter;
+		counter1.innerHTML = 0;
+		
+		var subsales = document.getElementById("subsales");
+		var counter2 = document.getElementById("subsales-counter");
+		subsales.onclick = inc_counter;
+		counter2.innerHTML = 0;
+
+		var subparts = document.getElementById("subparts");
+		var counter3 = document.getElementById("subparts-counter");
+		subparts.onclick = inc_counter;
+		counter3.innerHTML = 0;
+
+		var subfin = document.getElementById("subfin");
+		var counter4 = document.getElementById("subfin-counter");
+		subfin.onclick = inc_counter;
+		counter4.innerHTML = 0;
+
+		var internal = document.getElementById("internal");
+		var counter5 = document.getElementById("internal-counter");
+		internal.onclick = inc_counter;
+		counter5.innerHTML = 0;
+
+		var misc = document.getElementById("misc");
+		var counter6 = document.getElementById("misc-counter");
+		misc.onclick = inc_counter; 
+		counter6.innerHTML = 0;
+
+		var hyundai = document.getElementById("hyundai");
+		var counter7 = document.getElementById("hyundai-counter");
+		hyundai.onclick = inc_counter;
+		counter7.innerHTML = 0;
+
+		var noncall = document.getElementById("noncall");
+		var counter8 = document.getElementById("noncall-counter");
+		noncall.onclick = inc_counter;
+		counter8.innerHTML = 0;
+
+		var maserati = document.getElementById("maserati");
+		var counter9 = document.getElementById("maserati-counter");
+		maserati.onclick = inc_counter;
+		counter9.innerHTML = 0;
+
+	//All the information to put into the Generic Decrease Function:
+		var lesssubsvce = document.getElementById("lesssubsvce");
+		var counter1 = document.getElementById("subsvce-counter");
+		lesssubsvce.onclick = dec_counter;
+		counter1.innerHTML = 0;
+		
+		var subsales = document.getElementById("lesssubsales");
+		var counter2 = document.getElementById("subsales-counter");
+		lesssubsales.onclick = dec_counter;
+		counter2.innerHTML = 0;
+
+		var subparts = document.getElementById("lesssubparts");
+		var counter3 = document.getElementById("subparts-counter");
+		lesssubparts.onclick = dec_counter;
+		counter3.innerHTML = 0;
+
+		var subfin = document.getElementById("lesssubfin");
+		var counter4 = document.getElementById("subfin-counter");
+		lesssubfin.onclick = dec_counter;
+		counter4.innerHTML = 0;
+
+		var internal = document.getElementById("lessinternal");
+		var counter5 = document.getElementById("internal-counter");
+		lessinternal.onclick = dec_counter;
+		counter5.innerHTML = 0;
+
+		var misc = document.getElementById("lessmisc");
+		var counter6 = document.getElementById("misc-counter");
+		lessmisc.onclick = dec_counter; 
+		counter6.innerHTML = 0;
+
+		var hyundai = document.getElementById("lesshyundai");
+		var counter7 = document.getElementById("hyundai-counter");
+		lesshyundai.onclick = dec_counter;
+		counter7.innerHTML = 0;
+
+		var noncall = document.getElementById("lessnoncall");
+		var counter8 = document.getElementById("noncall-counter");
+		lessnoncall.onclick = dec_counter;
+		counter8.innerHTML = 0;
+
+		var maserati = document.getElementById("lessmaserati");
+		var counter9 = document.getElementById("maserati-counter");
+		lessmaserati.onclick = dec_counter;
+		counter9.innerHTML = 0;
+
+	</script>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
